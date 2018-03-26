@@ -2990,7 +2990,7 @@
 			}
 
 			.dropotron li.active > a, .dropotron li.active > span, .dropotron li:hover > a, .dropotron li:hover > span {
-				background: #105ba1;
+				background: #ffc751;
 				color: #ffffff;
 			}
 
@@ -3023,6 +3023,7 @@
 
 	#banner {
 		background-attachment: scroll,							fixed;
+		background-image: url("../images/banner.jpg");
 		background-position: top left,						center center;
 		background-repeat: repeat,							no-repeat;
 		background-size: auto,							cover;

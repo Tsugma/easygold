@@ -5,10 +5,10 @@
 		<title>Easy Gold Syarikat</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
-		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
-		<link rel="stylesheet" href="assets/css/base.css" />
-		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
-		<link rel="stylesheet" href="assets/css/font-awesome-animation.min.css">
+		<!--[if lte IE 8]><script src="js/ie/html5shiv.js"></script><![endif]-->
+		<link rel="stylesheet" href="css/base.css" />
+		<!--[if lte IE 8]><link rel="stylesheet" href="css/ie8.css" /><![endif]-->
+		<link rel="stylesheet" href="css/font-awesome-animation.min.css">
 
 	</head>
 	<body class="landing">
@@ -23,8 +23,14 @@
 							<li><a href="#" class="">ABOUT US</a></li>
 							<li><a href="#">LOANS</a></li>
 							<li><a href="#" class="">CONTACT US</a></li>
-
-							<li><a href="#" class="button">GET YOUR FREE CONSULTATION</a></li>
+							<li>
+								<a href="#" class="icon fa-angle-down">Language</a>
+								<ul>
+									<li><a href="/">EN</a></li>
+									<li><a href="/ch">CH</a></li>
+									<li><a href="/bm">BM</a></li>
+								</ul>
+							</li>
 						</ul>
 					</nav>
 
@@ -32,15 +38,11 @@
 
 			<!-- Banner -->
 				<section id="banner">
-					<iframe src="https://browseplay.com/player/auto-muted/d9803411-35ff-4dc2-acd5-d99229d87419" style="position: absolute; top: 0px; left: 0px; width: 100%; height: 100%; z-index: -99;"></iframe>
-
 					<h2><strong style="color:#ffc751; z-index: 1">Easy Gold</strong> Syarikat</h2>
 					<p>Your Reliable Financial Loan Company</p>
-
 					<ul class="actions">
 						<li><a href="#" class="button">Get Free Consultation</a></li>
 					</ul>
-
 				</section>
 
 			<!-- Main -->
@@ -77,7 +79,7 @@
 										Apply for a personal loan and ease your burden. You get quick
 										cash that can be repaid on flexible terms. Contact us and find out how.</p></br></br></br></br></br></br>
 									<ul class="actions">
-										<li><a href="#" class="button alt">Contact Us Now</a></li>
+										<li><a href="#contact" class="scroll-btn button alt">Contact Us Now</a></li>
 									</ul>
 								</div>
 							</div>
@@ -90,7 +92,7 @@
 										one of our financial advisors to know how you can get a business loan that’s fast,
 										reliable, and convenient.</p></br></br>
 									<ul class="actions">
-										<li><a href="#" class="button alt">Contact Us Now</a></li>
+										<li><a href="#contact" class="scroll-btn button alt">Contact Us Now</a></li>
 									</ul>
 								</div>
 							</div>
@@ -104,7 +106,7 @@
 										We’ll assess it and give you the best possible rate.
 										Want to know more? Talk with us for further details.</p>
 									<ul class="actions">
-										<li><a href="#" class="button alt">Contact Us Now</a></li>
+										<li><a href="#contact" class="scroll-btn button alt">Contact Us Now</a></li>
 									</ul>
 								</div>
 							</div>
@@ -177,22 +179,10 @@
 					</ul>
 				</footer>
 		</div>
+		<script src="js/jquery.min.js"></script>
 
 		<script>
 			$(document).ready(function() {
-
-				$('.collapsible-item').on('click', function() {
-					$(this).toggleClass('active');
-					$('p', this).toggle(100);
-				});
-
-				$('.mobile-toggle').on('click', function() {
-					$('.mobile-menu').addClass('active');
-
-					$('.mobile-menu').click(function() {
-						$('.mobile-menu').removeClass('active');
-					});
-				});
 
 				$('.scroll-btn').on('click', function() {
 					var scrollTarget = $(this).attr('href');
@@ -213,15 +203,15 @@
 				}
 				jQuery.ajax({
 					type: 'POST',
-					url: 'https://clikcouch.herokuapp.com/mailer_api/dgbfinance',
+					url: 'https://clikcouch.herokuapp.com/mailer_api/',
 					data: {
 						'text': bodyData,
 					}
 				}).error(function(e) {
 					debugger;
-					window.location = '/thank-you'
+					window.location = '/'
 				}).done(function(e) {
-					window.location = '/thank-you'
+					window.location = '/'
 				});
 
 
@@ -234,15 +224,12 @@
 			});
 		</script>
 
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/jquery.dropotron.min.js"></script>
-			<script src="assets/js/jquery.scrollgress.min.js"></script>
-			<script src="assets/js/skel.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
-			<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
-			<script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.js"></script>
-			<script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+			<script src="js/jquery.dropotron.min.js"></script>
+			<script src="js/jquery.scrollgress.min.js"></script>
+			<script src="js/scrollto.min.js"></script>
+			<script src="js/skel.min.js"></script>
+			<script src="js/util.js"></script>
+			<script src="js/main.js"></script>
 
 	</body>
 </html>
