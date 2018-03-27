@@ -1,0 +1,114 @@
+<!DOCTYPE HTML>
+
+<html>
+	<head>
+		<title>Easy Gold Syarikat</title>
+		<meta charset="utf-8" />
+		<meta name="description" content="Looking for a comprehensive suite of conventional business loan and personal loan solutions to suit your needs? Get Your Loan Approved in 1 Day with 3 Easy Steps. # No ATM Card Required
+																			# No Guarantor Required
+																			# Blacklisted Accepted
+																			# Immediate cash in once approved
+																			# No Extra Fees "/>
+		<meta name="keywords" content="Personal Loan, Business Loan, Mortgage Loan and Payday Loan">
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<!--[if lte IE 8]><script src="js/ie/html5shiv.js"></script><![endif]-->
+		<link rel="stylesheet" href="css/base.css" />
+		<!--[if lte IE 8]><link rel="stylesheet" href="css/ie8.css" /><![endif]-->
+		<link rel="stylesheet" href="css/font-awesome-animation.min.css">
+
+	</head>
+	<body class="landing">
+		<div id="page-wrapper">
+
+			<!-- Header -->
+				<header id="header" class="alt">
+					<h1><a href="/">Easy Gold</a> Syarikat</h1>
+					<nav id="nav">
+						<ul>
+							<li>
+								<a href="#" class="icon fa-angle-down">Language</a>
+								<ul>
+									<li><a href="/">English</a></li>
+									<li><a href="/ch">中文</a></li>
+									<li><a href="/bm">Melayu</a></li>
+								</ul>
+							</li>
+						</ul>
+					</nav>
+
+				</header>
+
+			<!-- Banner -->
+				<section id="banner">
+					<h2><strong style="color:#ffc751; z-index: 1">Thank</strong> You</h2>
+					<p>We've received your submission, we'll call you soon!</p>
+					<ul class="actions">
+						<li><a href="/" class="button scroll-btn">Back to homepage</a></li>
+					</ul>
+				</section>
+			<!-- Footer -->
+				<footer id="footer">
+					<ul class="icons">
+						<li><a href="#" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
+						<li><a href="#" class="icon fa-envelope"><span class="label">Instagram</span></a></li>
+						<li><a href="#" class="icon fa-whatsapp"><span class="label">Google+</span></a></li>
+					</ul>
+					<ul class="copyright">
+						<li>&copy;</li>
+					</ul>
+				</footer>
+		</div>
+		<script src="js/jquery.min.js"></script>
+
+		<script>
+			$(document).ready(function() {
+
+				$('.scroll-btn').on('click', function() {
+					var scrollTarget = $(this).attr('href');
+					$.scrollTo(scrollTarget, 800);
+				});
+			$('form.contact').on('submit', function(e) {
+
+				e.preventDefault();
+				var bodyData = {
+					name: $('input[name="name"]').val(),
+					contact_no: $('input[name="contact_no"]').val(),
+					region: $('select[name="region"]').val(),
+					type: $('select[name="type"]').val(),
+					email: $('input[name="email"]').val(),
+					income: $('input[name="income"]').val(),
+					borrow_amount: $('input[name="borrow_amount"]').val(),
+					message: $('textarea[name="message"]').val(),
+				}
+				jQuery.ajax({
+					type: 'POST',
+					url: 'https://clikcouch.herokuapp.com/mailer_api/',
+					data: {
+						'text': bodyData,
+					}
+				}).error(function(e) {
+					debugger;
+					window.location = '/'
+				}).done(function(e) {
+					window.location = '/'
+				});
+
+
+			});
+			$('.services-tab-item').on('click', function() {
+				$('.services-tabs').addClass('active');
+				$('.services-tab-item').removeClass('active');
+				$(this).addClass('active');
+			});
+			});
+		</script>
+
+			<script src="js/jquery.dropotron.min.js"></script>
+			<script src="js/jquery.scrollgress.min.js"></script>
+			<script src="js/scrollto.min.js"></script>
+			<script src="js/skel.min.js"></script>
+			<script src="js/util.js"></script>
+			<script src="js/main.js"></script>
+
+	</body>
+</html>
