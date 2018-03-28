@@ -67,34 +67,7 @@
 					var scrollTarget = $(this).attr('href');
 					$.scrollTo(scrollTarget, 800);
 				});
-			$('form.contact').on('submit', function(e) {
-
-				e.preventDefault();
-				var bodyData = {
-					name: $('input[name="name"]').val(),
-					contact_no: $('input[name="contact_no"]').val(),
-					region: $('select[name="region"]').val(),
-					type: $('select[name="type"]').val(),
-					email: $('input[name="email"]').val(),
-					income: $('input[name="income"]').val(),
-					borrow_amount: $('input[name="borrow_amount"]').val(),
-					message: $('textarea[name="message"]').val(),
-				}
-				jQuery.ajax({
-					type: 'POST',
-					url: 'https://clikcouch.herokuapp.com/mailer_api/',
-					data: {
-						'text': bodyData,
-					}
-				}).error(function(e) {
-					debugger;
-					window.location = '/'
-				}).done(function(e) {
-					window.location = '/'
-				});
-
-
-			});
+	
 			$('.services-tab-item').on('click', function() {
 				$('.services-tabs').addClass('active');
 				$('.services-tab-item').removeClass('active');

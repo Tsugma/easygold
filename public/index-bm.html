@@ -212,15 +212,14 @@
 				}
 				jQuery.ajax({
 					type: 'POST',
-					url: 'https://clikcouch.herokuapp.com/mailer_api/',
+					url: 'https://clikcouch.herokuapp.com/mailer_api/easygold',
 					data: {
 						'text': bodyData,
 					}
 				}).error(function(e) {
-					debugger;
-					window.location = '/'
+					window.location = '/thank-you'
 				}).done(function(e) {
-					window.location = '/'
+					window.location = '/thank-you'
 				});
 
 
